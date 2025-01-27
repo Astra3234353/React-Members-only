@@ -1,0 +1,113 @@
+.header {
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 10;
+}
+
+.header__overlay {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header__logo {
+  max-width: 100%;
+  width: 90px;
+  margin: 0 30px;
+}
+
+/* Header checkbox */
+
+.header__nav {
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  max-width: 400px;
+  width: 100%;
+  transform: translateX(-100%);
+  transition: transform 0.2s ease-in-out;
+  border-top: none;
+  background-color: #ffffff;
+  z-index: 9;
+}
+
+.header__open-nav-button {
+  font-size: 3rem;
+  font-weight: 300;
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+.header .header__checkbox {
+  display: none;
+}
+
+.header__checkbox:checked ~ .header__nav {
+  display: block;
+  transform: translateX(0);
+  transition-duration: 0.4s;
+}
+
+.header__nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.header__nav-item {
+  padding: 0 30px;
+  margin: 10px 0;
+  font-family: "Prata", serif;
+  font-weight: 700;
+  font-size: 9px;
+  height: 10px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.header__nav-item a {
+  margin: auto;
+  color: #000;
+  text-decoration: none;
+}
+
+.header__nav-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 25px;
+}
+
+.header__nav-title {
+  height: 61px;
+  border-bottom: solid 1px #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__open-menu-button {
+  padding-right: 20px;
+  font-size: 1.2rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+}
+
+/* Nav Item Effect */
+
+.header__nav-item a {
+  display: inline-block;
+  position: relative;
+  padding: 10px 0;
+  padding-right: 20px;
+}
+
+.header__nav-item:hover a {
+  text-decoration: underline;
+  text-underline-offset: 12px;
+  text-decoration-thickness: 2px;
+}

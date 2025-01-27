@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Prata", serif;
+}
+
+div, ul, nav, header, footer, section, article, aside, main, a, li, ul, p {
+  margin: 0;
+  padding: 0;
+}

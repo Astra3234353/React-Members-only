@@ -1,0 +1,32 @@
+.iconic-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.iconic img {
+  width: 100%;
+  height: auto;
+}
+
+.iconic__buttons {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+}
+
+.iconic__buttons button {
+  background-color: transparent;
+  color: #fff;
+  border: solid 1px #fff;
+  padding: 10px 25px;
+  margin: 0 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Prata", serif;
+  letter-spacing: 0.15rem;
+}

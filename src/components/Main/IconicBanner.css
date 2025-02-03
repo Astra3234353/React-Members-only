@@ -19,6 +19,11 @@
   right: 20px;
 }
 
+.iconic__buttons button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
 .iconic__buttons button {
   background-color: transparent;
   color: #fff;
@@ -29,4 +34,5 @@
   text-transform: uppercase;
   font-family: "Prata", serif;
   letter-spacing: 0.15rem;
+  transition: all 0.3s;
 }

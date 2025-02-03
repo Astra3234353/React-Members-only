@@ -6,8 +6,17 @@ function Product( { title, price, url1, hoverUrl} ) {
       <a href="#">
         <div className="product__img-container">
           <picture className='product-picture'>
-           <img src={"../../" + url1} alt="" className='product-img'/>
-           <img src={"../../" + hoverUrl} alt="" className='product-img hover'/>
+            <img 
+              src={"../../" + url1} 
+              alt={"Product: " + title} 
+              className='product-img'
+            />
+            <img 
+              src={"../../" + hoverUrl} 
+              alt={"Product on hover: " + title}
+              className='product-img hover'
+              loading='lazy'
+            />
           </picture>
         </div>
         <div className="product__info">

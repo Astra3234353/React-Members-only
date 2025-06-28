@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import LockScrollButton from './LockScrollButton';
 import './Header.css';
 import Logo from '../assets/logo.png';
@@ -49,7 +50,7 @@ function HeaderSVGS() {
         marginRight: "48px"
       }}
     >
-      <a href="/account/login" className="sm-max:hidden">
+      <Link to="/account" className="sm-max:hidden">
         <svg
           aria-hidden="true"
           fill="none"
@@ -76,9 +77,9 @@ function HeaderSVGS() {
             strokeMiterlimit="10"
           />
         </svg>
-      </a>
+      </Link>
 
-      <a href="/pages/wishlist" title="wishlist">
+      <Link to="/wishlist" title="wishlist">
         <svg
           className="icon icon-heart"
           width="20px"
@@ -94,10 +95,9 @@ function HeaderSVGS() {
             fillRule="evenodd"
           />
         </svg>
-      </a>
+      </Link>
 
-      <a
-        href="/search"
+      <Link to="/search"
         aria-controls="header-search-sections--17545124315288__newheader_zHCeWD"
       >
         <svg
@@ -124,9 +124,9 @@ function HeaderSVGS() {
             strokeLinecap="round"
           />
         </svg>
-      </a>
+      </Link>
 
-      <a href="/cart" className="relative" aria-controls="cart-drawer">
+      <Link to="/checkout" className="relative" aria-controls="cart-drawer">
         <svg
           aria-hidden="true"
           fill="none"
@@ -145,7 +145,7 @@ function HeaderSVGS() {
             strokeLinejoin="round"
           />
         </svg>
-      </a>
+      </Link>
     </div>
   );
 }

@@ -1,19 +1,26 @@
 import './Product.css';
+import { useState } from 'react';
 
-function Product( { title, price, url1, hoverUrl} ) {
+function Product( { title, url1, price, hoverUrl} ) {
+  const [ chnPrice, setChnPrice ] = useState(price);
+
+  function handleClick() {
+    setChnPrice(chnPrice + 100);
+    console.log(chnPrice);
+  }
+
   return (
-    <div className="product">
-      <a href="#">
+    <div className="product" onClick={handleClick}>
         <div className="product__img-container">
           <picture className='product-picture'>
             <img 
-              src={"../../" + url1} 
+              src={`../../${url1}`}
               alt={"Product: " + title} 
               className='product-img'
             />
             <img 
-              src={"../../" + hoverUrl} 
-              alt={"Product on hover: " + title}
+              src={`../../${hoverUrl}`}
+              alt={`Product on hover: ${title}`}
               className='product-img hover'
               loading='lazy'
             />
@@ -27,10 +34,9 @@ function Product( { title, price, url1, hoverUrl} ) {
             Members Only®
           </p>
           <div className="product-price">
-            <h6>${(price / 100) + '.00'}</h6>
+            <h6>${(chnPrice / 100) + '.00'}</h6>
           </div>
         </div>
-      </a>
     </div>
   )
 }

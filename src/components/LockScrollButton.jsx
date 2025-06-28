@@ -1,22 +1,12 @@
-let isLocked = false;
-
-function LockScroll() {
-  if (isLocked) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "visible";
-  }
-}
-
-function LockScrollButton( {html, className} ) {
+function LockScrollButton( {html, className, setOverlay } ) {
   return (
     <label
     className= {className}
     htmlFor="open-menu" 
     role="button"
     onClick={() => {
-      isLocked = !isLocked;
-      LockScroll();
+      setOverlay(true);
+      document.body.style.overflow = "hidden";
     }}
     >{html}</label>
   );

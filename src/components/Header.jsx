@@ -1,54 +1,25 @@
 import { Link } from 'react-router'
 import LockScrollButton from './LockScrollButton';
-import './Header.css';
 import Logo from '../assets/logo.png';
+import './Header.css';
 
-function Header() {
-  return (
-    <header className="header">
-      <div className="header__overlay">
-        <input type="checkbox" id="open-menu" className='header__checkbox'/>
-          <LockScrollButton 
-            className="header__open-nav-button" 
-            html = "="
-          />
-        <div className="header__logo-container">
-            <img className="header__logo" src={Logo} alt="Logo" />
-        </div>
-        <nav className="header__nav">
-            <div className="header__nav-title">
-              <img className="header__logo" src={Logo} alt="Logo" />
-              <LockScrollButton 
-                className="header__open-menu-button"
-                html = "x"
-              />
-            </div>
-            <ul className="header__nav-list">
-                <li className="header__nav-item"><a href="#">Sale</a></li>
-                <li className="header__nav-item"><a href="#">New Arrivals</a></li>
-                <li className="header__nav-item"><a href="#">Men</a></li>
-                <li className="header__nav-item"><a href="#">Women</a></li>
-                <li className="header__nav-item"><a href="#">Kids</a></li>
-                <li className="header__nav-item"><a href="#">Scrubs</a></li>
-                <li className="header__nav-item"><a href="#">Clearance</a></li>
-                <li className="header__nav-item"><a href="#">West Village Lounge</a></li>
-            </ul>
-        </nav>
-        <HeaderSVGS />
-      </div>
-    </header>
-  )
-}
+function Header({ overlay, setOverlay }) {
+  function handleClick() {
+    setOverlay(false);
+    document.body.style.overflow = "visible";
+  }
 
-function HeaderSVGS() {
+  function HeaderSVGS() {
   return (
-    <div 
-      className="header__svg-links" 
-      style={{ 
-        display: "flex", 
-        gap: ".625rem .9rem" ,
+    <div
+      className="header__svg-links"
+      onClick={handleClick}
+      style={{
+        display: "flex",
+        gap: ".625rem .9rem",
         marginRight: "48px"
-      }}
+      }
+    }
     >
       <Link to="/account" className="sm-max:hidden">
         <svg
@@ -149,6 +120,61 @@ function HeaderSVGS() {
     </div>
   );
 }
+
+  return (
+    <>
+      <header className="header">
+        <div className="header__overlay">
+          <input type="checkbox" 
+            id="open-menu" 
+            className='header__checkbox' 
+            checked={overlay}
+          />
+          <LockScrollButton
+            className="header__open-nav-button"
+            html="="
+            overlay={overlay}
+            setOverlay={setOverlay}
+          />
+          <Link to="/">
+            <div className="header__logo-container" onClick={handleClick}>
+              <img className="header__logo" src={Logo} alt="Logo" onClick={handleClick} />
+            </div>
+          </Link>
+          <nav className="header__nav">
+            <div className="header__nav-title">
+              <Link to="/">
+                <img className="header__logo" src={Logo} alt="Logo" onClick={handleClick} />
+              </Link>
+              <LockScrollButton
+                className="header__open-menu-button"
+                html="x"
+                overlay={overlay}
+                setOverlay={setOverlay}
+              />
+            </div>
+            <ul className="header__nav-list">
+              <li className="header__nav-item"><Link href="#" onClick={handleClick}>Sale</Link></li>
+              <li className="header__nav-item"><Link href="#" onClick={handleClick}>New Arrivals</Link></li>
+              <li className="header__nav-item"><Link href="#" onClick={handleClick}>Men</Link></li>
+              <li className="header__nav-item"><Link href="#" onClick={handleClick}>Women</Link></li>
+              <li className="header__nav-item"><Link href="#" onClick={handleClick}>Kids</Link></li>
+              <li className="header__nav-item"><Link href="#" onClick={handleClick}>Scrubs</Link></li>
+              <li className="header__nav-item"><Link href="#" onClick={handleClick}>Clearance</Link></li>
+              <li className="header__nav-item"><Link href="#" onClick={handleClick}>West Village Lounge</Link></li>
+            </ul>
+          </nav>
+          <HeaderSVGS />
+        </div>
+      </header>
+
+      {overlay && (<div 
+      className='overlay' 
+      onClick={handleClick}></div>)}
+    </>
+  )
+}
+
 
 
 export default Header

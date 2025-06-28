@@ -6,6 +6,7 @@ function ProductList() {
     return (
       <Product 
        key={product.returnId()}
+       id = {product.returnId()}
        title={product.title}
        price={product.price}
        url1={product.returnurl1()}

@@ -1,5 +1,13 @@
-export default function AccountPage() {
+import Header from '../components/Header';
+
+export default function AccountPage({ overlay, setOverlay }) {
   return (
-    <div>Account Test</div>
+    <>
+      <Header
+        overlay={overlay}
+        setOverlay={setOverlay}
+      />
+      <div>Account Test</div>
+    </>
   )
 }

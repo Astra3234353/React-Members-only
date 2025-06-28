@@ -1,5 +1,16 @@
-export default function ProductPage() {
+import { useParams } from 'react-router'
+import Header from '../components/Header'
+
+export default function ProductPage({ overlay, setOverlay }) {
+  const { id } = useParams()
+
   return (
-    <div>Product test page</div>
+    <>
+      <Header 
+        overlay={overlay} 
+        setOverlay={setOverlay} 
+      />
+      <div>Product test page: {id}</div>
+    </>
   )
 }

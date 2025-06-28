@@ -1,5 +1,13 @@
-export default function WishlistPage() {
+import Header from '../components/Header';
+
+export default function WishlistPage({ overlay, setOverlay }) {
   return (
-    <div>Wishlist Test</div>
+    <>
+      <Header
+        overlay={overlay}
+        setOverlay={setOverlay}
+      />
+      <div>Checkout Test</div>
+    </>
   )
 }

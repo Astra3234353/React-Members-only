@@ -8,10 +8,13 @@ import Banner1 from '../assets/images/221_2f197a4c-4e4b-43ef-86bf-a3157911443f.w
 import Banner2 from '../assets/images/Men_s_Image_banner_3.webp'
 import Banner3 from '../assets/images/235_cdad2659-1db3-4e16-82ad-1940b4046015.webp'
 
-export default function HomePage() {
+export default function HomePage({ overlay, setOverlay }) {
   return (
     <>
-      <Header />
+      <Header 
+        overlay={overlay}
+        setOverlay={setOverlay}
+      />
       <SeasonEvent />
       <main>
         <section>

@@ -1,7 +1,8 @@
-import './Product.css';
 import { useState } from 'react';
+import './Product.css';
+import { Link } from "react-router"
 
-function Product( { title, url1, price, hoverUrl} ) {
+function Product( { id, title, url1, price, hoverUrl} ) {
   const [ chnPrice, setChnPrice ] = useState(price);
 
   function handleClick() {
@@ -10,7 +11,8 @@ function Product( { title, url1, price, hoverUrl} ) {
   }
 
   return (
-    <div className="product" onClick={handleClick}>
+    <Link to={`/products/${id}`}>
+      <div className="product" onClick={handleClick}>
         <div className="product__img-container">
           <picture className='product-picture'>
             <img 
@@ -37,7 +39,9 @@ function Product( { title, url1, price, hoverUrl} ) {
             <h6>${(chnPrice / 100) + '.00'}</h6>
           </div>
         </div>
-    </div>
+      </div>
+    </Link>
+  
   )
 }
 

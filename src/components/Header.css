@@ -35,7 +35,7 @@
   transition: transform 0.2s ease-in-out;
   border-top: none;
   background-color: #ffffff;
-  z-index: 9;
+  z-index: 102;
 }
 
 .header__open-nav-button {
@@ -115,3 +115,15 @@
 
 /* Header Queries */
 
+/* Overlay */
+
+.overlay {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.51);
+  z-index: 99; /* Behind the header *//* Hidden by default */
+}

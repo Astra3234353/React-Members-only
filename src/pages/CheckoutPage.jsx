@@ -1,5 +1,13 @@
-export default function CheckoutPage() {
+import Header from '../components/Header';
+
+export default function CheckoutPage({ overlay, setOverlay }) {
   return (
-    <div>Checkout Test</div>
+    <>
+      <Header
+        overlay={overlay}
+        setOverlay={setOverlay}
+      />
+      <div>Checkout Test</div>
+    </>
   )
 }

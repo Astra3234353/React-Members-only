@@ -1,5 +1,13 @@
-export default function SearchPage() {
+import Header from '../components/Header';
+
+export default function SearchPage({ overlay, setOverlay }) {
   return (
-    <div>Seach Test</div>
+    <>
+      <Header
+        overlay={overlay}
+        setOverlay={setOverlay}
+      />
+      <div>Checkout Test</div>
+    </>
   )
 }

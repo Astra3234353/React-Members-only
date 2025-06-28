@@ -1,0 +1,26 @@
+.product-cont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: 239 239 239 / 1.0;
+}
+
+/*  LEFT - IMG */
+.product-cont__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+
+.product-cont__left img {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+
+/*  RIGHT - INFO */
+
+.product-cont__right {
+  padding: 40px;
+}

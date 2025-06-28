@@ -1,16 +1,18 @@
 import { useParams } from 'react-router'
 import Header from '../components/Header'
+import ProductContainer from '../components/Product/ProductContiner'
 
 export default function ProductPage({ overlay, setOverlay }) {
   const { id } = useParams()
 
   return (
     <>
+      <title>Product</title>
       <Header 
         overlay={overlay} 
         setOverlay={setOverlay} 
       />
-      <div>Product test page: {id}</div>
+      <ProductContainer id={id} />
     </>
   )
 }

@@ -11,6 +11,7 @@ import Banner3 from '../assets/images/235_cdad2659-1db3-4e16-82ad-1940b4046015.w
 export default function HomePage({ overlay, setOverlay }) {
   return (
     <>
+      <title>Members Only</title>
       <Header 
         overlay={overlay}
         setOverlay={setOverlay}

@@ -68,8 +68,7 @@ function Header({ overlay, setOverlay }) {
           </svg>
         </Link>
 
-        <Link to="/search"
-          aria-controls="header-search-sections--17545124315288__newheader_zHCeWD"
+        <div
         >
           <svg
             aria-hidden="true"
@@ -95,7 +94,7 @@ function Header({ overlay, setOverlay }) {
               strokeLinecap="round"
             />
           </svg>
-        </Link>
+        </div>
 
         <Link to="/checkout" className="relative" aria-controls="cart-drawer">
           <svg
@@ -157,14 +156,12 @@ function Header({ overlay, setOverlay }) {
               />
             </div>
             <ul className="header__nav-list">
-              <li className="header__nav-item"><Link href="#" onClick={handleClick}>Sale</Link></li>
-              <li className="header__nav-item"><Link href="#" onClick={handleClick}>New Arrivals</Link></li>
-              <li className="header__nav-item"><Link href="#" onClick={handleClick}>Men</Link></li>
-              <li className="header__nav-item"><Link href="#" onClick={handleClick}>Women</Link></li>
-              <li className="header__nav-item"><Link href="#" onClick={handleClick}>Kids</Link></li>
-              <li className="header__nav-item"><Link href="#" onClick={handleClick}>Scrubs</Link></li>
-              <li className="header__nav-item"><Link href="#" onClick={handleClick}>Clearance</Link></li>
-              <li className="header__nav-item"><Link href="#" onClick={handleClick}>West Village Lounge</Link></li>
+              <li className="header__nav-item"><Link to="/products/search/Men" onClick={handleClick}>Men</Link></li>
+              <li className="header__nav-item"><Link to="/products/search/Women" onClick={handleClick}>Women</Link></li>
+              <li className="header__nav-item"><Link to="/products/search/Kids" onClick={handleClick}>Kids</Link></li>
+              <li className="header__nav-item"><Link to="/products/search/Scrubs" onClick={handleClick}>Scrubs</Link></li>
+              <li className="header__nav-item"><Link to="/products/search/Clearance" onClick={handleClick}>Clearance</Link></li>
+              <li className="header__nav-item"><Link to="/products/search/West Village Lounge" onClick={handleClick}>West Village Lounge</Link></li>
             </ul>
           </nav>
           <HeaderSVGS />

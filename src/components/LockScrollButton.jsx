@@ -5,7 +5,7 @@ function LockScrollButton( {html, className, setOverlay } ) {
     htmlFor="open-menu" 
     role="button"
     onClick={() => {
-      setOverlay(true);
+      setOverlay(!true);
       document.body.style.overflow = "hidden";
     }}
     >{html}</label>

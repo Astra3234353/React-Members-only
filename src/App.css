@@ -18,6 +18,11 @@ div, ul, nav, header, footer, section, article, aside, main, a, li, ul, p {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit; /* Inherit color from parent */
+}
+
 /* Scrollbar */
 
 /* Webkit-based browsers (Chrome, Edge, Safari) */

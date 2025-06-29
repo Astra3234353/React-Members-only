@@ -1,7 +1,7 @@
 .product-cont {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: 239 239 239 / 1.0;
+  background-color: rgba(239 239 239 / 1.0);
 }
 
 /*  LEFT - IMG */
@@ -9,18 +9,167 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 60px;
+  margin-top: 40px;
+  max-height: 600px;
+  padding-bottom: 200px;
 }
 
-
 .product-cont__left img {
+  object-fit: cover;
   width: 100%;
-  height: auto;
+  max-width: 500px;
   border-radius: 3px;
 }
 
 /*  RIGHT - INFO */
 
 .product-cont__right {
-  padding: 40px;
+  padding: 40px 20px;
+}
+
+.product-cont__info {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-cont__logo {
+  margin-top: 10px;
+  color: rgba(28, 28, 28, 0.694);
+  font-family: Poppins, sans-serif;
+  font-size: 1.2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.7;
+  letter-spacing: 0.18em;
+  transition: all 0.1s ease-in-out;
+}
+
+.product-cont__logo:hover {
+  color: rgba(28, 28, 28, 0.9);
+}
+
+.product-cont__name {
+  font-family: Poppins, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 0.6;
+  letter-spacing: -0.02em;
+  color: rgba(28, 28, 28, 0.9);
+  padding: 20px 0 10px 0;
+}
+
+.product-cont__price {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: rgba(102 0 51);
+}
+
+.product-cont__rating {
+  display: flex;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  padding: 10px 0 0 0;
+  font-size: 0.9rem;
+}
+
+.product-cont__rating span {
+  font-size: 1.6rem;
+  position: relative;
+  top: -3px;
+  margin-right: 5px;
+}
+
+.product-cont__sponsor {
+  font-size: 0.9rem;
+  margin: 20px 0 40px 0;
+  text-transform: none;
+}
+
+.product-cont__cart {
+  margin: 80px 0;
+}
+
+/* BUTTONS */
+
+/* From Uiverse.io by mrhyddenn */ 
+.button-b {
+  background: #fff;
+  padding: 10px 20px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Prata", serif;
+  text-transform: uppercase;
+  color: #000000b1;
+  width: 100%;
+  transform: skew(-0deg);
+  border: solid 1px rgba(20, 20, 20, 0.341);
+}
+
+.button-b::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  left: 0;
+  background: rgb(20, 20, 20);
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.button-b:hover {
+  color: #fff;
+}
+
+.button-b:hover::before {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.button-c {
+  background: #5433EB;
+  border: none;
+  padding: 10px 20px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 800;
+  font-family: "Prata", serif;
+  color: #ffffffe0;
+  margin-top: 10px;
+  width: 100%;;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-c:hover {
+  background: #4429bd;
+  color: #ffffffe0;
+  box-shadow: 0 0 10px rgba(84, 51, 235, 0.5);
+}
+/* MEDIA QUERIES */
+@media (max-width: 900px) {
+  .product-cont {
+    grid-template-columns: 1fr;
+  }
+
+  .product-cont__left {
+    padding: 20px 60px;
+    max-height: 600px;
+  }
+
+  .product-cont__left img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .product-cont__right {
+    padding: 20px;
+  }
 }
